@@ -1,4 +1,4 @@
-# Project - Social Media App
+# Social Media App
 https://www.youtube.com/watch?v=m_u6P5k0vP0&t=519s
 
 # Tools used
