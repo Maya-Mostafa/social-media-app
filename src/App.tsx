@@ -1,6 +1,8 @@
+import HomeLayout from "./components/HomeLayout";
 import MenuBar from "./components/MenuBar";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
+import classes from './styles/App.module.css';
 
 
 function App() {
@@ -8,7 +10,8 @@ function App() {
     <div>
       <MenuBar />
       {/* <SignIn/> */}
-      <SignUp/>
+      {/* <SignUp/> */}
+      <HomeLayout/>
     </div>
   );
 }
