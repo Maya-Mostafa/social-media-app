@@ -1,0 +1,10 @@
+.MyProfileCard{
+    text-align: center;
+}
+.myProfileDetails{
+    display: block;
+    margin-top: 20px;
+}
+.myProfileDetails span{
+    display: block;
+}
