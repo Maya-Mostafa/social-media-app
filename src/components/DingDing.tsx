@@ -1,4 +1,3 @@
-import * as React from "react";
 import {
   Avatar,
   Card,
@@ -8,12 +7,11 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
-import Button from "@mui/material/Button";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import DeleteIcon from "@mui/icons-material/Delete";
-import CommentIcon from "@mui/icons-material/Comment";
-import classes from "../styles/DingDong.module.css";
+import classes from "../styles/DingDing.module.css";
+import DeleteDingDing from "./DeleteDingDing";
+import AddComment from "./AddComment";
 
 const DingDing = () => {
   return (
@@ -40,13 +38,8 @@ const DingDing = () => {
           <FavoriteIcon />
           <span className={classes.notifText}>0 likes</span>
         </IconButton>
-        <IconButton aria-label="share">
-          <CommentIcon />
-          <span className={classes.notifText}>3 comments</span>
-        </IconButton>
-        <IconButton aria-label="share" className={classes.deleteDD}>
-          <DeleteIcon />
-        </IconButton>
+        <AddComment />
+        <DeleteDingDing/>
       </CardActions>
     </Card>
   );
