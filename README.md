@@ -23,3 +23,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 `npx create-react-app social-media-app --template typescript` <br/>
 `yarn add @mui/material @emotion/react @emotion/styled` <br/>
 `yarn add @mui/icons-material` <br/>
+`yarn add react-router-dom` <br/>
