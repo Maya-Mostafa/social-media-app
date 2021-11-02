@@ -1,18 +1,29 @@
-import HomeLayout from "./components/HomeLayout";
-import MenuBar from "./components/MenuBar";
-import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
-import classes from './styles/App.module.css';
+// import { Route, Switch } from 'react-router-dom'
+import Layout from "./components/Layout/Layout";
+import Home from "./pages/Home";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 
 
-function App() {
+
+const App = () => {
   return (
-    <div>
-      <MenuBar />
-      {/* <SignIn/> */}
-      {/* <SignUp/> */}
-      <HomeLayout/>
-    </div>
+    <div>test</div>
+		// <Layout>
+		// 	<Switch>
+		// 		<Route path="/home" exact>
+		// 			<Home />
+		// 		</Route>
+
+		// 		<Route path='/sign-in' exact>
+		// 			<SignIn />
+		// 		</Route>
+
+		// 		<Route path="/sign-up" exact>
+		// 			<SignUp />
+		// 		</Route>
+		// 	</Switch>
+		// </Layout>
   );
 }
 
