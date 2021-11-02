@@ -1,10 +1,9 @@
 import React from 'react'
+import SignInCtrls from '../components/SignInCtrls'
 
 const SignIn = () => {
     return (
-        <div>
-            
-        </div>
+        <SignInCtrls/>
     )
 }
 

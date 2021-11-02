@@ -1,10 +1,9 @@
 import React from 'react'
+import HomeLayout from '../components/HomeLayout'
 
 const Home = () => {
     return (
-        <div>
-            
-        </div>
+        <HomeLayout/>
     )
 }
 
