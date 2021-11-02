@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import Comments from './Comments';
-import DingDing from './DingDing';
+import DingDingItem from './DingDingItem';
 
 const AddComment = () => {
 
@@ -47,7 +47,7 @@ const AddComment = () => {
 					{/* <DialogContentText id='alert-dialog-description'>
 						Check these comments!
 					</DialogContentText> */}
-					<DingDing />
+					<DingDingItem />
 					<form className='mui-form--inline'>
 						<TextField
 							autoFocus

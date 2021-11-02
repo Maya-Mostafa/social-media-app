@@ -13,7 +13,7 @@ import classes from "../styles/DingDing.module.css";
 import DeleteDingDing from "./DeleteDingDing";
 import AddComment from "./AddComment";
 
-const DingDing = () => {
+const DingDingItem = () => {
   return (
     <Card sx={{ minWidth: 275 }} className={classes.ddCntnr}>
       <CardHeader
@@ -45,4 +45,4 @@ const DingDing = () => {
   );
 };
 
-export default DingDing;
+export default DingDingItem;

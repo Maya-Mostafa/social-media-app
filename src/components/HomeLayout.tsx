@@ -3,7 +3,7 @@ import { Container, Grid } from "@mui/material";
 import MyProfile from "./MyProfile";
 import classes from "../styles/HomeLayout.module.css";
 import NewDingDing from "./NewDingDing";
-import DingDings from "./DingDings";
+import DingDingList from "./DingDingList";
 
 const HomeLayout = () => {
 	return (
@@ -15,7 +15,7 @@ const HomeLayout = () => {
 			<Grid container spacing={2} justifyContent='center'>
 				<Grid item xs={12} lg={8}>
 					<NewDingDing />
-					<DingDings />
+					<DingDingList />
 				</Grid>
 				<Grid item xs={12} lg={4}>
 					<MyProfile />
