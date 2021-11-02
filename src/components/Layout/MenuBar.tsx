@@ -1,18 +1,21 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Badge from "@mui/material/Badge";
-import MenuItem from "@mui/material/MenuItem";
-import Menu from "@mui/material/Menu";
+import {
+	AppBar,
+	Box,
+	Toolbar,
+	IconButton,
+	Typography,
+	Badge,
+	MenuItem,
+	Menu,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import HomeIcon from "@mui/icons-material/Home";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { Logout } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const MenuBar = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -58,71 +61,77 @@ const MenuBar = () => {
 
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-            <HomeIcon />
-        </IconButton>
-        <p>Home</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="logout user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <Logout />
-        </IconButton>
-        <p>Logout</p>
-      </MenuItem>
-    </Menu>
+		<Menu
+			anchorEl={mobileMoreAnchorEl}
+			anchorOrigin={{
+				vertical: "top",
+				horizontal: "right",
+			}}
+			id={mobileMenuId}
+			keepMounted
+			transformOrigin={{
+				vertical: "top",
+				horizontal: "right",
+			}}
+			open={isMobileMenuOpen}
+			onClose={handleMobileMenuClose}
+		>
+			<MenuItem>
+				<IconButton
+					size='large'
+					aria-label='Home'
+					color='inherit'
+					component={Link}
+					to='/home'
+				>
+					<HomeIcon />
+				</IconButton>
+				<p>Home</p>
+			</MenuItem>
+			<MenuItem>
+				<IconButton
+					size='large'
+					aria-label='show 17 new notifications'
+					color='inherit'
+				>
+					<Badge badgeContent={17} color='error'>
+						<NotificationsIcon />
+					</Badge>
+				</IconButton>
+				<p>Notifications</p>
+			</MenuItem>
+			<MenuItem>
+				<IconButton
+					size='large'
+					aria-label='account of current user'
+					aria-controls='primary-search-account-menu'
+					aria-haspopup='true'
+					color='inherit'
+				>
+					<AccountCircle />
+				</IconButton>
+				<p>Profile</p>
+			</MenuItem>
+			<MenuItem>
+				<IconButton
+					size='large'
+					aria-label='logout user'
+					aria-controls='primary-search-account-menu'
+					aria-haspopup='true'
+					color='inherit'
+				>
+					<Logout />
+				</IconButton>
+				<p>Logout</p>
+			</MenuItem>
+		</Menu>
   );
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -130,14 +139,14 @@ const MenuBar = () => {
             sx={{ mr: 2 }}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ display: { xs: "none", sm: "block" } }}
           >
-            Family Social
+            Family Ding Ding
           </Typography>
 
           <Box sx={{ flexGrow: 1 }} />
@@ -146,6 +155,8 @@ const MenuBar = () => {
               size="large"
               aria-label="Home"
               color="inherit"
+              component = {Link}
+              to = "/home"
             >
               <HomeIcon />
             </IconButton>
