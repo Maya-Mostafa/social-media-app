@@ -1,8 +1,9 @@
 import DingDing from './DingDing'
+import classes from '../styles/DingDing.module.css'
 
 const DingDings = () => {
     return (
-		<div>
+		<div className={classes.dingDingsCntnr}>
 			<DingDing />
 			<DingDing />
 			<DingDing />
