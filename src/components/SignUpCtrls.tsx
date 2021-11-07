@@ -12,7 +12,11 @@ import {
 	ThemeProvider,
 } from "@mui/material";
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { Link } from "react-router-dom";
+import { useContext } from 'react';
+import { Link, useHistory } from "react-router-dom";
+import AuthContext from "../store/auth-context";
+import {signUpUser} from '../services/auth';
+import {storeUserSignUp} from '../services/users';
 
 function Copyright(props: any) {
   return (
@@ -29,15 +33,35 @@ function Copyright(props: any) {
 const theme = createTheme();
 
 export default function SignUpCtrls() {
+
+  const authCtx = useContext(AuthContext);
+  const history = useHistory();
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
+    // console.log({
+    //   email: data.get('email'),
+    //   password: data.get('password'),
+    // });
+
+    const userData = {
+      firstName: data.get('firstName')?.toString(),
+      lastName: data.get('lastName')?.toString(),
+      email: data.get('email')?.toString(),
+      password: data.get('password')?.toString(),
+    };
+    signUpUser({email: userData.email, password: userData.password}).then(signUpData => {
+      storeUserSignUp(userData).then(userId => {
+        authCtx.login({token: signUpData.idToken, userId: userId.name});
+        history.replace('/home');
+      });
     });
+
+
   };
+  
 
   return (
     <ThemeProvider theme={theme}>

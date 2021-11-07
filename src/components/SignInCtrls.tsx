@@ -15,6 +15,10 @@ import {
 } from "@mui/material";
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Link } from "react-router-dom";
+import {useContext} from 'react';
+import {useHistory} from 'react-router-dom';
+import AuthContext from '../store/auth-context';
+import {signInUser} from '../services/auth';
 
 function Copyright(props: any) {
   return (
@@ -31,14 +35,23 @@ function Copyright(props: any) {
 const theme = createTheme();
 
 export default function SignInCtrls() {
+
+  const authCtx = useContext(AuthContext);
+  const history = useHistory();  
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    const userData = {
+      email: data.get('email')?.toString(),
+      password: data.get('password')?.toString(),
+    };
+
+    signInUser(userData).then(data =>{
+      authCtx.login(data.idToken);
+      history.replace('/home');
+    }).catch(err => alert(err));
+
   };
 
   return (
