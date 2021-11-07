@@ -24,8 +24,8 @@ const DeleteDingDing = () => {
 
 	return (
 		<Fragment>
-			<IconButton aria-label='share' className={classes.deleteDD}>
-				<DeleteIcon onClick={handleClickOpen} />
+			<IconButton aria-label='share' className={classes.deleteDD} onClick={handleClickOpen}>
+				<DeleteIcon />
 			</IconButton>
 
 			<Dialog
